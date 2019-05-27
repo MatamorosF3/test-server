@@ -30,4 +30,4 @@ app.post('/user', [checkJwt, checkRole(["ADMIN"])], createUser);
 app.get('/user', [checkJwt, checkRole(["ADMIN"])], getUsers);
 app.get('/user/:id', [checkJwt, checkRole(["ADMIN"])], getUser);
 app.put('/user/:id', [checkJwt, checkRole(["ADMIN"])], updateUser);
-app.delete('/post/:id', [checkJwt, checkRole(["ADMIN"])], deleteUser);
+app.delete('/user/:id', [checkJwt, checkRole(["ADMIN"])], deleteUser);

@@ -84,7 +84,7 @@ export async function put(request: Request, response: Response) {
 export async function remove(request: Request, response: Response) {
     const userRepository = getManager().getRepository(User);
     const user = await userRepository.findOne(request.params.id);
-
+    console.log("Ready to delete");
     // if user was not found return 404 to the client
     if (!user) {
         response.status(404);
@@ -94,5 +94,5 @@ export async function remove(request: Request, response: Response) {
 
     await userRepository.remove(user);
 
-    response.send(post);
+    response.send(user);
 }

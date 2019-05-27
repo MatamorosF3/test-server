@@ -47,7 +47,7 @@ class Auth {
     console.log("Token:");
     console.log(token)
     //Send the jwt in the response
-    res.send({'token':token, 'role':user.role});
+    res.send({'token':token, 'role':user.role, 'userId': user.id});
   };
 
   static changePassword = async (req: Request, res: Response) => {
